@@ -4,4 +4,4 @@ if __name__ == "__main__":
     video = YouTube(link)
     stream = video.streams.get_highest_resolution()
     stream.download()
-
+    print("✅ 😎 🎧")

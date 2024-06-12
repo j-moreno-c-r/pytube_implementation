@@ -7,3 +7,4 @@ if __name__ == "__main__":
         video = YouTube(url)
         audio_stream = video.streams.get_audio_only()
         audio_stream.download()
+        print("✅ 😎 🎧")
