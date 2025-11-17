@@ -1,4 +1,4 @@
-from pytube import YouTube
+from pytubefix import YouTube
 if __name__ == "__main__":
     link = input("Enter the link of the audio: ") 
     yt = YouTube(link)

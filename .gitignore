@@ -1,0 +1,4 @@
+flake.lock
+.venv/*
+.venv
+.pytube

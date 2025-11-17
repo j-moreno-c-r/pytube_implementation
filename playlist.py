@@ -1,5 +1,5 @@
-from pytube import YouTube
-if __name__ == "__main__":from pytube import YouTube
+from pytubefix import YouTube
+if __name__ == "__main__":from pytubefix import YouTube
 
 if __name__ == "__main__":
     with open('links.txt', 'r') as file:

@@ -1,0 +1,28 @@
+{
+   description = "Krux-installer flake";
+
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    flake-utils.url = "github:numtide/flake-utils";
+  };
+
+  outputs = { self, nixpkgs, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+        python = pkgs.python313;
+      in {
+        devShells.default = pkgs.mkShell {
+          buildInputs = [
+          ];
+          shellHook = ''
+          if [ ! -d ".venv" ]; then
+              python -m venv .venv
+            fi
+          source .venv/bin/activate
+          pip install -r requirements.txt
+          '';
+        };
+      }
+    );
+}
