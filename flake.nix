@@ -1,5 +1,5 @@
 {
-   description = "Krux-installer flake";
+  description = "Krux-installer flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -14,13 +14,15 @@
       in {
         devShells.default = pkgs.mkShell {
           buildInputs = [
+            python
+            python.pkgs.pip
           ];
           shellHook = ''
-          if [ ! -d ".venv" ]; then
+            if [ ! -d ".venv" ]; then
               python -m venv .venv
             fi
-          source .venv/bin/activate
-          pip install -r requirements.txt
+            source .venv/bin/activate
+            pip install -r requirements.txt
           '';
         };
       }
